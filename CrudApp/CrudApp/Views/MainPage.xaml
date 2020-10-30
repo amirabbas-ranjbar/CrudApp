@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrudApp.Views.MainPage" Title="Users List">
+    <StackLayout Padding="15">
+
+        <Button Text="Add User" HorizontalOptions="FillAndExpand"
+                BackgroundColor="Orange" TextColor="Black" Clicked="Button_Clicked"></Button>
+
+        <ListView x:Name="UList" HasUnevenRows="True" ItemTapped="UList_ItemTapped"
+                            IsPullToRefreshEnabled="True" Refreshing="UList_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="MenuItem_Clicked" IsDestructive="True" CommandParameter="{Binding Id}"></MenuItem>
+                        </ViewCell.ContextActions>
+
+                        <StackLayout Spacing="2">
+                            <Label x:Name="lblUName" TextColor="Black" Text="{Binding Name, StringFormat='User Name: {0:F0}'}" FontSize="Medium" FontAttributes="Bold"></Label>
+                            <Label x:Name="lblUAddress" TextColor="Black" Text="{Binding Address, StringFormat='Address: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                            <Label x:Name="lblUEmail" TextColor="Black" Text="{Binding Email, StringFormat='Email-Id: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                            <Label x:Name="lblUMobile" TextColor="Black" Text="{Binding Mobile, StringFormat='Mobile No: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                            <Label x:Name="lblPassword" TextColor="Black" Text="{Binding Password, StringFormat='Password: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

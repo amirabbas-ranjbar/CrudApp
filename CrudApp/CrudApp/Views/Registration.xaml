@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrudApp.Views.Registration"   Title="User Registration">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Label Text="Fill All Information" FontSize="Small" FontAttributes="Bold"></Label>
+
+                <Entry Placeholder="Name" TextColor="Black" x:Name="txtName"></Entry>
+
+                <Editor Placeholder="Address" TextColor="Black" x:Name="txtAddress" HeightRequest="50"></Editor>
+
+                <Entry Placeholder="Email-Id"  Keyboard="Email" TextColor="Black" x:Name="txtEmail"></Entry>
+
+                <Entry Placeholder="10 Digit Mobile No" Keyboard="Numeric" TextColor="Black" x:Name="txtMobile"></Entry>
+
+                <Entry Placeholder="Password" TextColor="Black" x:Name="txtPassword" IsPassword="True"></Entry>
+
+
+                <Button Text="Register" HorizontalOptions="FillAndExpand" x:Name="BtnRegistration"     
+                 Clicked="BtnRegistration_Clicked"></Button>
+
+                <Button Text="Update" HorizontalOptions="FillAndExpand" x:Name="BtnUpdate"     
+                 Clicked="BtnUpdate_Clicked" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
